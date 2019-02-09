@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
-        transform.position = new Vector3(-7.64f, -3.45f, 0);
+        transform.position = new Vector3(-7.88f, 0.22f, 0);
     }
 
     // Update is called once per frame 
@@ -33,7 +33,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
         }
     }
+
+
 }
