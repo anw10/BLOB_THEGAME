@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float _jumpPower = 15.0f;
 
     [SerializeField]
-    private bool _onGround = true;
+    private bool _onGround = false;
 
     [SerializeField]
     private GameObject _CoinObject;
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     {
         Movement();
 
+
     }
 
 
@@ -44,7 +45,16 @@ public class Player : MonoBehaviour
         {
 
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-            //_onGround = false;
+            _onGround = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "ground")
+        {
+            _onGround = true;
         }
     }
 
