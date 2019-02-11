@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _jumpPower: 10
-  _onGround: 0
+  _jumpPower: 4
+  _onGround: 1
   _CoinObject: {fileID: 4535676343660814269, guid: 7a5b45b09ee6248a191f8976e56bf3d8,
     type: 3}
 --- !u!58 &1320707525
