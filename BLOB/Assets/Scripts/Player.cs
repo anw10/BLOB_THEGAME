@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject _CoinObject;
+
+    public Animator player_animator;
     // Start is called before the first frame update 
     void Start()
     {
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && _onGround == true)
         {
+            player_animator.SetBool("IsJumping", true);
 
             GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
             _onGround = false;
@@ -55,6 +58,7 @@ public class Player : MonoBehaviour
         if (other.tag == "ground")
         {
             _onGround = true;
+            player_animator.SetBool("IsJumping", false);
         }
     }
 
