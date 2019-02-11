@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ground
   - coin
+  - trashCan
   layers:
   - Default
   - TransparentFX
