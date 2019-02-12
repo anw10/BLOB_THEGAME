@@ -10,12 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 7366279298394136306}
   - component: {fileID: 7366279298394136307}
+  - component: {fileID: 1828704007}
   - component: {fileID: 7366279298394136316}
   - component: {fileID: 7366279298394136305}
-  - component: {fileID: 1828704007}
   - component: {fileID: 1320707525}
+<<<<<<< HEAD
   - component: {fileID: 799595106}
   - component: {fileID: 1947230533}
+=======
+  - component: {fileID: 1701838886}
+>>>>>>> master
   m_Layer: 0
   m_Name: Player_Blob
   m_TagString: Player
@@ -31,8 +35,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7366279298394136317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.004, y: 0.0246, z: 0}
+  m_LocalScale: {x: 0.49972466, y: 0.50432926, z: 0.8372}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,17 +78,35 @@ SpriteRenderer:
   m_SortingLayerID: 238638303
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: ac170ee03cf184d5ba7b52d8f5ff66bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b7f2095fd51a644395b1b79ff6105e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.87, y: 1.03}
+  m_Size: {x: 1.44, y: 1.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1828704007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366279298394136317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd085252d636471bbb055cdb712e745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3
+  _jumpPower: 15
+  _onGround: 0
+  _CoinObject: {fileID: 4535676343660814269, guid: 7a5b45b09ee6248a191f8976e56bf3d8,
+    type: 3}
+  player_animator: {fileID: 1701838886}
 --- !u!58 &7366279298394136316
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -100,7 +122,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.36
+  m_Radius: 0.73
 --- !u!50 &7366279298394136305
 Rigidbody2D:
   serializedVersion: 4
@@ -122,6 +144,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+<<<<<<< HEAD
 --- !u!114 &1828704007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +162,8 @@ MonoBehaviour:
   _onGround: 1
   _CoinObject: {fileID: 4535676343660814269, guid: 7a5b45b09ee6248a191f8976e56bf3d8,
     type: 3}
+=======
+>>>>>>> master
 --- !u!58 &1320707525
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -152,10 +177,10 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04}
+  m_Offset: {x: 0, y: 0.09}
   serializedVersion: 2
-  m_Radius: 0.3675545
---- !u!95 &799595106
+  m_Radius: 0.73
+--- !u!95 &1701838886
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -165,7 +190,11 @@ Animator:
   m_GameObject: {fileID: 7366279298394136317}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
+<<<<<<< HEAD
   m_Controller: {fileID: 0}
+=======
+  m_Controller: {fileID: 9100000, guid: 2282322ca3f6f436da89b32ebe2323d4, type: 2}
+>>>>>>> master
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
