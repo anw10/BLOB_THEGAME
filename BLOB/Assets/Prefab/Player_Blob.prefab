@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7366279298394136317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.004, y: 0.0246, z: 0}
-  m_LocalScale: {x: 0.49972466, y: 0.50432926, z: 0.8372}
+  m_LocalScale: {x: 0.51716524, y: 0.5420674, z: 0.8372}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,11 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd085252d636471bbb055cdb712e745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _jumpPower: 15
+  _speed: 4
+  _jumpPower: 13
   _onGround: 0
   _CoinObject: {fileID: 4535676343660814269, guid: 7a5b45b09ee6248a191f8976e56bf3d8,
     type: 3}
+  jumptime: 0
   player_animator: {fileID: 1701838886}
 --- !u!58 &7366279298394136316
 CircleCollider2D:
