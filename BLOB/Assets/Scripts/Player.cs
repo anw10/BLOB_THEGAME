@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +26,28 @@ public class Player : MonoBehaviour
         Instantiate(_CoinObject, new Vector3(-5.9f, 1.3f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(-1.3f, -1.5f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(5.6f, 0.76f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(17.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(17.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(16.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(18.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(15.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(20.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(17.2f, 3.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(32.2f, 4.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(34.2f, 4.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(36.2f, 4.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(38.2f, 4.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(52.2f, 3.4f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(32.2f, 4.5f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(146.2f, 9.9f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(148.2f, 9.9f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(150.2f, 9.9f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(152.2f, 9.9f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(154.2f, 9.9f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(214.2f, 7.8f, 0), Quaternion.identity);
+
+
+
     }
 
     // Update is called once per frame 
