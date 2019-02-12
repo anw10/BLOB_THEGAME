@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _CoinObject;
 
+    public int jumptime = 0;
+
     public Animator player_animator;
     // Start is called before the first frame update 
     void Start()
