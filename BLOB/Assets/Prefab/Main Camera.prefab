@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothS: 0.125
+  smoothS: 0.5
   offset: {x: 0, y: 0, z: -10}
 --- !u!114 &1514035156
 MonoBehaviour:
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155195076003221306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a87581e65da1402438b05d041e873fdb, type: 3}
   m_Name: 

@@ -5,14 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool gameOver = true;
-    public GameObject player;
+    private Player player;
 
     private UI_Manager _uiManager;
 
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UI_Manager>();
-        _uiManager.HideOptionsScreen();
+        _uiManager.HideOptionsMenu();
+        player = GameObject.Find("Player_Blob").GetComponent<Player>();
+        player.SpeedStop();
     }
     
     //if game over == true
@@ -26,19 +28,23 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
-                Instantiate(player, Vector3.zero, Quaternion.identity);
+
+                //Instantiate(player, new Vector3(-7.88f, 5.22f, 0), Quaternion.identity);
+                player.SpeedStart();
                 gameOver = false;
-                _uiManager.HideTitleScreen();
+                _uiManager.HideMainMenu();
             }
 
             if (Input.GetKeyDown(KeyCode.O))
             {
-                _uiManager.ShowOptionsScreen();
+                _uiManager.ShowOptionsMenu();
+                _uiManager.HideMainMenu();
             }
 
             if (Input.GetKeyDown(KeyCode.X))
             {
-                _uiManager.HideOptionsScreen();
+                _uiManager.HideOptionsMenu();
+                _uiManager.ShowMainMenu();
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -46,7 +52,9 @@ public class GameManager : MonoBehaviour
                 Application.Quit();
                 Debug.Log("Ordered to End Application.");
             }
+
         }
+        
 
     }
 }

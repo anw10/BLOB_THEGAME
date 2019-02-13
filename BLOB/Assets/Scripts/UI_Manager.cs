@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
-    public GameObject Title;
-    public GameObject Play_Button;
-    public GameObject Options_Button;
-
-    public GameObject Options_Screen;
+    public GameObject Main_Menu;
+    public GameObject Options_Menu;
 
 
     public void UpdateScore()
@@ -16,27 +13,28 @@ public class UI_Manager : MonoBehaviour
 
     }
 
-    public void ShowTitleScreen()
+    public void ShowMainMenu()
     {
-        Title.SetActive(true);
-        Play_Button.SetActive(true);
-        Options_Button.SetActive(true);
+        Main_Menu.SetActive(true);
     }
 
-    public void HideTitleScreen()
+    public void HideMainMenu()
     {
-        Title.SetActive(false);
-        Play_Button.SetActive(false);
-        Options_Button.SetActive(false);
+        Main_Menu.SetActive(false);
     }
 
-    public void ShowOptionsScreen()
+    public void ShowOptionsMenu()
     {
-        Options_Screen.SetActive(true);
+        Options_Menu.SetActive(true);
     }
 
-    public void HideOptionsScreen()
+    public void HideOptionsMenu()
     {
-        Options_Screen.SetActive(false);
+        Options_Menu.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

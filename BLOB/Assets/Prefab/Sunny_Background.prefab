@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1733747507317981772}
   - component: {fileID: 405189183}
   - component: {fileID: 405189182}
-  - component: {fileID: 1024797965}
   m_Layer: 0
   m_Name: NewBackground2048x1536
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733747507317981770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0018, y: 0.0022, z: 0}
-  m_LocalScale: {x: 0.048917007, y: 0.06506717, z: 1}
+  m_LocalPosition: {x: 3.34, y: 0.42, z: 0}
+  m_LocalScale: {x: 0.5112529, y: 0.45709062, z: 1}
   m_Children: []
   m_Father: {fileID: 1733747508314425640}
   m_RootOrder: 0
@@ -115,19 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa33cf171ca77a84598bf338dbf6abf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgspeed: 3.8
---- !u!114 &1024797965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733747507317981770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87581e65da1402438b05d041e873fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  bgspeed: 0
 --- !u!1 &1733747508314425620
 GameObject:
   m_ObjectHideFlags: 0

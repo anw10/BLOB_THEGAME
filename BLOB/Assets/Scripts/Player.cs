@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 3.0f;
+    public float _speed;
 
     [SerializeField]
     private float _jumpPower = 13.0f;
@@ -109,11 +109,20 @@ public class Player : MonoBehaviour
 
     }
 
+    public void SpeedStart()
+    {
+        _speed = 3.0f;
+    }
+
+    public void SpeedStop()
+    {
+        _speed = 0.0f;
+    }
 
 
 }   
 
-
+/*
         transform.position = new Vector3(-8.806f, -0.652f, 0);
         Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f, 0), Quaternion.identity);
@@ -139,3 +148,5 @@ public class Player : MonoBehaviour
         Instantiate(_CoinObject, new Vector3(178.94f, 4.59f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(211.23f, 6.81f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(212.87f, 6.81f, 0), Quaternion.identity);
+        */
+        
