@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BG_Scroll : MonoBehaviour
 {
+    public Transform target;
+
     private Rigidbody2D rigidBody;
     public float bgspeed = 4f;
     // Start is called before the first frame update
@@ -16,6 +18,6 @@ public class BG_Scroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = target.position;
     }
 }
