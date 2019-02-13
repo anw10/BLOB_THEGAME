@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733747507317981770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.307, y: -0.16, z: 0}
-  m_LocalScale: {x: 0.2518491, y: 0.21988088, z: 1}
+  m_LocalPosition: {x: 3.34, y: 0.42, z: 0}
+  m_LocalScale: {x: 0.5112529, y: 0.45709062, z: 1}
   m_Children: []
   m_Father: {fileID: 1733747508314425640}
   m_RootOrder: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa33cf171ca77a84598bf338dbf6abf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgspeed: 2
+  bgspeed: 0
 --- !u!1 &1733747508314425620
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 1733747508314425641}
   - component: {fileID: 1733747508314425622}
   - component: {fileID: 1733747508314425623}
-  - component: {fileID: 1328338822}
   m_Layer: 0
   m_Name: Sunny_Background
   m_TagString: Untagged
@@ -143,8 +142,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733747508314425620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.053, y: 0.002, z: 0}
-  m_LocalScale: {x: 16.030758, y: 10.03508, z: 1}
+  m_LocalPosition: {x: 3.4, y: 3.3, z: 0}
+  m_LocalScale: {x: 26.584618, y: 16.616558, z: 1}
   m_Children:
   - {fileID: 1733747507317981773}
   m_Father: {fileID: 0}
@@ -209,16 +208,3 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1328338822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733747508314425620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa33cf171ca77a84598bf338dbf6abf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bgspeed: 4
