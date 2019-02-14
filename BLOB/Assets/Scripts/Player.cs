@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    public float _speed;
+    public float _speed = 4.0f;
 
     [SerializeField]
     private float _jumpPower = 13.0f;
