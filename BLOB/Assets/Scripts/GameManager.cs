@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas").GetComponent<UI_Manager>();
-        _uiManager.HideOptionsMenu();
+        //_uiManager.HideOptionsMenu();
         player = GameObject.Find("Player_Blob").GetComponent<Player>();
-        player.SpeedStop();
+ 
     }
     
     //if game over == true
@@ -24,8 +24,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        /*
         if (gameOver == true)
         {
+            
             if (Input.GetKeyDown(KeyCode.P))
             {
 
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
-        
+        */
 
     }
 }
