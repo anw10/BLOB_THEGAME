@@ -22,7 +22,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _Jump_PowerUp_Object;
 
-    public int jumptime = 0;
+    private bool doubleJump = true;
+
+    private bool jump_power_up = false;
+
+   
+    
 
 
 
@@ -88,12 +93,35 @@ public class Player : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
 
-        if (Input.GetKeyDown(KeyCode.Space) && _onGround == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            player_animator.SetBool("IsJumping", true);
+            if (jump_power_up == true)
+            {
+                if (_onGround == true)
+                {
+                    player_animator.SetBool("IsJumping", true);
 
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-            _onGround = false;
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                    _onGround = false;
+                }
+                else if (doubleJump == true)
+                {
+                    player_animator.SetBool("IsJumping", false);
+                    player_animator.SetBool("IsJumping", true);
+
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
+                    doubleJump = false;
+                }
+            }
+            else {
+                if (_onGround == true)
+                {
+                    player_animator.SetBool("IsJumping", true);
+
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                    _onGround = false;
+                }
+            }
         }
     }
 
@@ -104,9 +132,10 @@ public class Player : MonoBehaviour
         {
             _onGround = true;
             player_animator.SetBool("IsJumping", false);
+            doubleJump = true;
         }
         else if (other.tag == "Jump_PowerUp"){
-            _jumpPower = 18.0f;
+            jump_power_up = true;
         }
 
 
