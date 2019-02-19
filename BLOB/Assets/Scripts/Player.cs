@@ -22,7 +22,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _Jump_PowerUp_Object;
 
-    public int jumptime = 0;
+    private bool doubleJump = true;
+
+    private bool jump_power_up = false;
+
+    private int _score;
+
+   
+    
 
 
 
@@ -31,6 +38,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
+
+        _score = 0;
+
         transform.position = new Vector3(-8.806f, -0.652f, 0);
         Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f, 0), Quaternion.identity);
@@ -76,7 +86,7 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-
+       
     }
 
 
@@ -88,12 +98,35 @@ public class Player : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
 
-        if (Input.GetKeyDown(KeyCode.Space) && _onGround == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            player_animator.SetBool("IsJumping", true);
+            if (jump_power_up == true)
+            {
+                if (_onGround == true)
+                {
+                    player_animator.SetBool("IsJumping", true);
 
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-            _onGround = false;
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                    _onGround = false;
+                }
+                else if (doubleJump == true)
+                {
+                    player_animator.SetBool("IsJumping", false);
+                    player_animator.SetBool("IsJumping", true);
+
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
+                    doubleJump = false;
+                }
+            }
+            else {
+                if (_onGround == true)
+                {
+                    player_animator.SetBool("IsJumping", true);
+
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                    _onGround = false;
+                }
+            }
         }
     }
 
@@ -104,10 +137,16 @@ public class Player : MonoBehaviour
         {
             _onGround = true;
             player_animator.SetBool("IsJumping", false);
+            doubleJump = true;
         }
         else if (other.tag == "Jump_PowerUp"){
-            _jumpPower = 18.0f;
+            jump_power_up = true;
         }
+        else if (other.tag == "coin") {
+            _score = _score + 10;
+            Debug.Log("Score: " + _score);
+        }
+
 
 
     }
@@ -122,7 +161,7 @@ public class Player : MonoBehaviour
         _speed = 0.0f;
     }
 
-
+    //blah
 }   
 
 
