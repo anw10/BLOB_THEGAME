@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 
     private bool jump_power_up = false;
 
+    private int _score;
+
    
     
 
@@ -36,6 +38,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
+
+        _score = 0;
+
         transform.position = new Vector3(-8.806f, -0.652f, 0);
         Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f, 0), Quaternion.identity);
@@ -81,7 +86,7 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-
+       
     }
 
 
@@ -137,6 +142,11 @@ public class Player : MonoBehaviour
         else if (other.tag == "Jump_PowerUp"){
             jump_power_up = true;
         }
+        else if (other.tag == "coin") {
+            _score = _score + 10;
+            Debug.Log("Score: " + _score);
+        }
+
 
 
     }
