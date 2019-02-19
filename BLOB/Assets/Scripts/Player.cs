@@ -114,7 +114,7 @@ public class Player : MonoBehaviour
                     player_animator.SetBool("IsJumping", false);
                     player_animator.SetBool("IsJumping", true);
 
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 14, 0), ForceMode2D.Impulse);
                     doubleJump = false;
                 }
             }
