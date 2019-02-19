@@ -8,6 +8,7 @@ TagManager:
   - coin
   - trashCan
   - Jump_PowerUp
+  - Clouds
   layers:
   - Default
   - TransparentFX
