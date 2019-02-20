@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private Player player;
 
     private UI_Manager _uiManager;
+    
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         /*
         if (gameOver == true)
         {
