@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
 
     private int _score;
 
-   
-    
+
+    private SceneSwitch _sceneswitch;
 
 
 
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
+        _sceneswitch = GetComponent<SceneSwitch>();
 
         _score = 0;
 
@@ -86,7 +87,12 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-       
+        if (transform.position.y < -4.63)
+        {
+            _sceneswitch.ToMain();
+        }
+
+
     }
 
 
