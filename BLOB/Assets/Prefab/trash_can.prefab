@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3517631349133923698}
   - component: {fileID: 3517631349133923699}
   - component: {fileID: 3517631349133923700}
-  - component: {fileID: 3517631349133923701}
+  - component: {fileID: 6967997846084253205}
   m_Layer: 0
   m_Name: trash_can
   m_TagString: trashCan
@@ -107,7 +107,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.89515287, y: 1.1212509}
   m_EdgeRadius: 0
---- !u!114 &3517631349133923701
+--- !u!114 &6967997846084253205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +116,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3517631349133923702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56f8e39b9302c4f63895be47903972ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 6307ef8ef54a24655b27f6aff49abb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
