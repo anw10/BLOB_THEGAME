@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 769424689772727257}
   - component: {fileID: 769424689772727254}
   - component: {fileID: 769424689772727255}
+  - component: {fileID: 803979874}
   m_Layer: 0
   m_Name: Player_Blob
   m_TagString: Player
@@ -105,7 +106,8 @@ MonoBehaviour:
     type: 3}
   _Jump_PowerUp_Object: {fileID: 3138567142456831545, guid: 16f77979f746a43688430ad962780d09,
     type: 3}
-  jumptime: 0
+  _time: 0
+  has_magnet: 0
   player_animator: {fileID: 769424689772727255}
 --- !u!58 &769424689772727256
 CircleCollider2D:
@@ -120,9 +122,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.06}
+  m_Offset: {x: 0, y: 0.011630334}
   serializedVersion: 2
-  m_Radius: 0.73
+  m_Radius: 0.9511946
 --- !u!50 &769424689772727257
 Rigidbody2D:
   serializedVersion: 4
@@ -157,9 +159,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.06}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.73
+  m_Radius: 0.7
 --- !u!95 &769424689772727255
 Animator:
   serializedVersion: 3
@@ -179,3 +181,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &803979874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769424689772727252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef575fce0871e1d47891c1d4c362a54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

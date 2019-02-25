@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
 
     private int _score;
 
+    public int _time;
+
+    public bool has_magnet;
 
     private SceneSwitch _sceneswitch;
 
@@ -40,6 +43,9 @@ public class Player : MonoBehaviour
     {
         _sceneswitch = GetComponent<SceneSwitch>();
 
+        has_magnet = false;
+
+        _time = 100;
         _score = 0;
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
@@ -92,7 +98,7 @@ public class Player : MonoBehaviour
             _sceneswitch.ToMain();
         }
 
-
+        _time--;
     }
 
 
@@ -120,7 +126,7 @@ public class Player : MonoBehaviour
                     player_animator.SetBool("IsJumping", false);
                     player_animator.SetBool("IsJumping", true);
 
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 14, 0), ForceMode2D.Impulse);
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
                     doubleJump = false;
                 }
             }
@@ -152,9 +158,16 @@ public class Player : MonoBehaviour
             _score = _score + 10;
             Debug.Log("Score: " + _score);
         }
+        else if (other.tag == "magnet") {
+            has_magnet = true;
+        }
 
 
 
+    }
+
+    public void increase_time() {
+        _time = _time + 10; //subject to change amount of time.
     }
 
     public void SpeedStart()

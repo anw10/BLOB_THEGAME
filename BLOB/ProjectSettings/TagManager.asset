@@ -9,6 +9,7 @@ TagManager:
   - trashCan
   - Jump_PowerUp
   - Clouds
+  - magnet
   layers:
   - Default
   - TransparentFX
