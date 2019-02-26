@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7176171262543094221}
   m_Layer: 0
   m_Name: magnet
-  m_TagString: Untagged
+  m_TagString: magnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

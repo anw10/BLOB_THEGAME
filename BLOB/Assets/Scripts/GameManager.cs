@@ -8,13 +8,17 @@ public class GameManager : MonoBehaviour
     private Player player;
 
     private UI_Manager _uiManager;
+    
 
     private void Start()
     {
         _uiManager = GameObject.Find("Canvas_Game").GetComponent<UI_Manager>();
 
-        _uiManager.UnPauseGame();
-        _uiManager.CloseSettings();
+        if (_uiManager != null)
+        {
+            _uiManager.UnPauseGame();
+            _uiManager.CloseSettings();
+        }
 
 
         player = GameObject.Find("Player_Blob").GetComponent<Player>();
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         /*
         if (gameOver == true)
         {

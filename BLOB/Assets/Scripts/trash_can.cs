@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Magnet_PowerUp : MonoBehaviour
+public class trash_can : MonoBehaviour
 {
     // Start is called before the first frame update
-    //private Player player;
-
     void Start()
     {
-        //player = GameObject.Find("Player_Blob").GetComponent<Player>();
-
+        
     }
 
     // Update is called once per frame
@@ -24,7 +21,6 @@ public class Magnet_PowerUp : MonoBehaviour
 
         if (other.tag == "Player")
         {
-
             Destroy(this.gameObject);
         }
     }

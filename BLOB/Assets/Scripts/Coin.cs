@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    //[SerializeField]
-    //private GameObject _playerObject;
 
-    // Update is called once per frame
-    void Update()
+
+    private Player player;
+
+
+
+    private void Start()
     {
-        
+
+        player = GameObject.Find("Player_Blob").GetComponent<Player>();
+
+    }
+
+    void Update()
+
+    {
+        float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
+        if (player.has_magnet == true && distance < 5f) {
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, Time.deltaTime * 6f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,4 +34,5 @@ public class Coin : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }
