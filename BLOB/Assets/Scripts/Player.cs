@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
     {
         Movement();
 
-        if (transform.position.y < -4.63)
+        if (transform.position.y < -8.97)
         {
             _sceneswitch.ToMain();
         }
@@ -104,8 +104,11 @@ public class Player : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Input.GetKeyDown(KeyCode.Space)
+
+        if (Input.touchCount > 0)
         {
+            Touch touch = Input.GetTouch(0);
             if (jump_power_up == true)
             {
                 if (_onGround == true)
@@ -167,7 +170,7 @@ public class Player : MonoBehaviour
         _speed = 0.0f;
     }
 
-    //blah
+    
 }   
 
 
