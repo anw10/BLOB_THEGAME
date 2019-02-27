@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
         if (player.has_magnet == true && distance < 5f) {
-            transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, Time.deltaTime * 6f);
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, player.transform.localPosition, Time.deltaTime * 10f);
         }
     }
 
