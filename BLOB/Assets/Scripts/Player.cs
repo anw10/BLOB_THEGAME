@@ -155,7 +155,8 @@ public class Player : MonoBehaviour
             jump_power_up = true;
         }
         else if (other.tag == "coin") {
-            _score = _score + 10;
+            //_score = _score + 10;
+            ScoreScript.scoreValue += 10;
             Debug.Log("Score: " + _score);
         }
         else if (other.tag == "magnet") {

@@ -20,11 +20,12 @@ public class GameManager : MonoBehaviour
             _uiManager.CloseSettings();
         }
 
-        if (player != null)
-        {
-            player = GameObject.Find("Player_Blob").GetComponent<Player>();
 
-        }
+
+
+        player = GameObject.Find("Player_Blob").GetComponent<Player>();
+
+ 
     }
     
     //if game over == true
