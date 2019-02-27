@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
         }
 
 
+
+
         player = GameObject.Find("Player_Blob").GetComponent<Player>();
 
  
