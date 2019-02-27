@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         Instantiate(_trashObject, new Vector3(137.87f, 4.47f, 0), Quaternion.identity);
         Instantiate(_trashObject, new Vector3(139.68f, 4.47f, 0), Quaternion.identity);
 
-        Instantiate(_Jump_PowerUp_Object, new Vector3(80.903f, -1.4314f, 0), Quaternion.identity);
+        Instantiate(_Jump_PowerUp_Object, new Vector3(80.903f, -1.6314f, 0), Quaternion.identity);
     }
 
 
@@ -110,11 +110,11 @@ public class Player : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
 
-        //Input.GetKeyDown(KeyCode.Space)
+        //Input.touchCount > 0
 
-        if (Input.touchCount > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Touch touch = Input.GetTouch(0);
+            //Touch touch = Input.GetTouch(0);
             if (jump_power_up == true)
             {
                 if (_onGround == true)
