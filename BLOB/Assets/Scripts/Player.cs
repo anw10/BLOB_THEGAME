@@ -45,7 +45,8 @@ public class Player : MonoBehaviour
 
         has_magnet = false;
 
-        _time = 100;
+        TimeScript.timeValue = 45.0f;
+
         _score = 0;
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
@@ -98,7 +99,8 @@ public class Player : MonoBehaviour
             _sceneswitch.ToMain();
         }
 
-        _time--;
+        //_time--;
+        TimeScript.timeValue -= Time.deltaTime;//*Mathf.RoundToInt
     }
 
 
@@ -165,13 +167,16 @@ public class Player : MonoBehaviour
         else if (other.tag == "magnet") {
             has_magnet = true;
         }
-
+        else if (other.tag == "trashCan")
+        {
+            increase_time();
+        }
 
 
     }
 
     public void increase_time() {
-        _time = _time + 10; //subject to change amount of time.
+        TimeScript.timeValue += 10.0f;
     }
 
     public void SpeedStart()
