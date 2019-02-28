@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     private bool jump_power_up = false;
 
-    private int _score;
+
 
     public int _time;
 
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         has_magnet = false;
 
         _time = 100;
-        _score = 0;
+        ScoreScript.scoreValue = 0;
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
         Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
@@ -95,10 +95,14 @@ public class Player : MonoBehaviour
 
         if (transform.position.y < -8.97)
         {
-            _sceneswitch.ToMain();
+            kill_player();
         }
 
         _time--;
+    }
+
+    public void kill_player() {
+        _sceneswitch.ToMain();
     }
 
 
@@ -160,10 +164,13 @@ public class Player : MonoBehaviour
         else if (other.tag == "coin") {
             //_score = _score + 10;
             ScoreScript.scoreValue += 10;
-            Debug.Log("Score: " + _score);
+            //Debug.Log("Score: " + _score);
         }
         else if (other.tag == "magnet") {
             has_magnet = true;
+        }
+        else if (other.tag == "Enemy") {
+            kill_player();
         }
 
 
