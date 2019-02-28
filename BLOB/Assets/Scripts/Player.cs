@@ -45,8 +45,8 @@ public class Player : MonoBehaviour
 
         has_magnet = false;
 
-        _time = 100;
-        ScoreScript.scoreValue = 0;
+        TimeScript.timeValue = 45.0f;
+
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
         Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
@@ -98,7 +98,8 @@ public class Player : MonoBehaviour
             kill_player();
         }
 
-        _time--;
+        //_time--;
+        TimeScript.timeValue -= Time.deltaTime;//*Mathf.RoundToInt
     }
 
     public void kill_player() {
@@ -169,16 +170,16 @@ public class Player : MonoBehaviour
         else if (other.tag == "magnet") {
             has_magnet = true;
         }
-        else if (other.tag == "Enemy") {
-            kill_player();
+        else if (other.tag == "trashCan")
+        {
+            increase_time();
         }
-
 
 
     }
 
     public void increase_time() {
-        _time = _time + 10; //subject to change amount of time.
+        TimeScript.timeValue += 10.0f;
     }
 
     public void SpeedStart()
