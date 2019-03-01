@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
-  _jumpPower: 14
+  _jumpPower: 30
   _onGround: 0
   _CoinObject: {fileID: 4535676343660814269, guid: 7a5b45b09ee6248a191f8976e56bf3d8,
     type: 3}
@@ -156,7 +156,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769424689772727252}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
