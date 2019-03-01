@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         _time = 100;
         _score = 0;
 
-        transform.position = new Vector3(-8.806f, -0.652f, 0);
+        transform.position = new Vector3(-6.806f, -0.652f, 0);
         Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f, 0), Quaternion.identity);
         Instantiate(_CoinObject, new Vector3(5.6f, -0.3f, 0), Quaternion.identity);
