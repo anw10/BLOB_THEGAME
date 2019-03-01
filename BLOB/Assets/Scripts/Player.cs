@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
 
     private bool jump_power_up = false;
 
-
+    private AudioSource _audioSource;
 
     public int _time;
 
@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>(); //this is new
         _sceneswitch = GetComponent<SceneSwitch>();
+        _audioSource = GetComponent<AudioSource>();
 
         has_magnet = false;
 
@@ -133,19 +134,25 @@ public class Player : MonoBehaviour
             {
                 if (_onGround == true)
                 {
+
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                    _audioSource.Play();
                     _onGround = false;
                 }
                 else if (doubleJump == true)
                 {
+                   
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
+                    _audioSource.Play();
                     doubleJump = false;
                 }
             }
             else {
                 if (_onGround == true)
                 {
+
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                    _audioSource.Play();
                     _onGround = false;
                 }
             }
@@ -156,8 +163,6 @@ public class Player : MonoBehaviour
         if (rb != null)
         {
             _vertical_velocity = (float)Math.Round(rb.velocity.y);
-
-            Debug.Log("Vertical Velocity" + _vertical_velocity);
         }
         if (_vertical_velocity > 1f) 
         {

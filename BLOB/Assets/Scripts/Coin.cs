@@ -8,7 +8,8 @@ public class Coin : MonoBehaviour
 
     private Player player;
 
-
+    [SerializeField]
+    private AudioClip _clip;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class Coin : MonoBehaviour
 
         if (other.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position);
             Destroy(this.gameObject);
         }
     }
