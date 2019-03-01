@@ -18,6 +18,6 @@ public class TimeScript : MonoBehaviour
     void Update()
     {
         time.text = "" + Mathf.Round(timeValue);
-        Debug.Log(timeValue);
+        //Debug.Log(timeValue);
     }
 }

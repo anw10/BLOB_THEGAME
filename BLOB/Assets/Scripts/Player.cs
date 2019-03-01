@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,13 +35,16 @@ public class Player : MonoBehaviour
 
     private SceneSwitch _sceneswitch;
 
+    [SerializeField]
+    private float _vertical_velocity;
 
-
+    private Rigidbody2D rb; //this is new
 
     public Animator player_animator;
     // Start is called before the first frame update 
     void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>(); //this is new
         _sceneswitch = GetComponent<SceneSwitch>();
 
         has_magnet = false;
@@ -49,37 +53,37 @@ public class Player : MonoBehaviour
 
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
-        Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(5.6f, -0.3f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(15.27f, 2.6f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(13.92f, 2.6f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(16.79f, 2.6f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(18.31f, 2.6f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(29.25f, -0.38f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(35.8f, -0.38f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(52.59f, 2.9f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(65.23f, 0.96f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(66.62f, 0.96f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(76.22f, -1.38f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(110.74f, 4.71f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(109.27f, 4.7f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(138.51f, 0.78f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(137.17f, 0.85f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(156.23f, 8.62f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(167.65f, 7.63f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(171.8f, 6.58f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(175.66f, 5.41f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(178.94f, 4.59f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(211.23f, 6.81f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(212.87f, 6.81f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(5.6f, -0.3f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(15.27f, 2.6f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(13.92f, 2.6f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(16.79f, 2.6f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(18.31f, 2.6f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(29.25f, -0.38f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(35.8f, -0.38f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(52.59f, 2.9f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(65.23f, 0.96f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(66.62f, 0.96f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(76.22f, -1.38f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(110.74f, 4.71f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(109.27f, 4.7f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(138.51f, 0.78f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(137.17f, 0.85f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(156.23f, 8.62f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(167.65f, 7.63f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(171.8f, 6.58f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(175.66f, 5.41f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(178.94f, 4.59f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(211.23f, 6.81f-1f, 0), Quaternion.identity);
+        Instantiate(_CoinObject, new Vector3(212.87f, 6.81f-1f, 0), Quaternion.identity);
 
 
 
-        Instantiate(_trashObject, new Vector3(32.35f, -0.38f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(48.96f, 2.9f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(70.72f, 0.9f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(109.62f, 0.55f, 0), Quaternion.identity);
+        Instantiate(_trashObject, new Vector3(32.35f, -0.38f-2f, 0), Quaternion.identity);
+        Instantiate(_trashObject, new Vector3(48.96f, 2.9f-1f, 0), Quaternion.identity);
+        Instantiate(_trashObject, new Vector3(70.72f, 0.9f-2f, 0), Quaternion.identity);
+        Instantiate(_trashObject, new Vector3(109.62f, 0.55f-2f, 0), Quaternion.identity);
         Instantiate(_trashObject, new Vector3(137.87f, 4.47f, 0), Quaternion.identity);
         Instantiate(_trashObject, new Vector3(139.68f, 4.47f, 0), Quaternion.identity);
 
@@ -92,6 +96,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
+        play_animation();
+
+
 
         if (transform.position.y < -8.97)
         {
@@ -100,6 +107,8 @@ public class Player : MonoBehaviour
 
         //_time--;
         TimeScript.timeValue -= Time.deltaTime;//*Mathf.RoundToInt
+
+
     }
 
     public void kill_player() {
@@ -124,16 +133,11 @@ public class Player : MonoBehaviour
             {
                 if (_onGround == true)
                 {
-                    player_animator.SetBool("IsJumping", true);
-
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
                     _onGround = false;
                 }
                 else if (doubleJump == true)
                 {
-                    player_animator.SetBool("IsJumping", false);
-                    player_animator.SetBool("IsJumping", true);
-
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
                     doubleJump = false;
                 }
@@ -141,13 +145,38 @@ public class Player : MonoBehaviour
             else {
                 if (_onGround == true)
                 {
-                    player_animator.SetBool("IsJumping", true);
-
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
                     _onGround = false;
                 }
             }
         }
+    }
+
+    public void play_animation() {
+        if (rb != null)
+        {
+            _vertical_velocity = (float)Math.Round(rb.velocity.y);
+
+            Debug.Log("Vertical Velocity" + _vertical_velocity);
+        }
+        if (_vertical_velocity > 1f) 
+        {
+            player_animator.SetFloat("speed", 1.0f);
+            player_animator.SetBool("run", false);
+        }
+
+        else if (_vertical_velocity < -1f) 
+        {
+            player_animator.SetFloat("speed", -1.0f);
+            player_animator.SetBool("run", false);
+        }
+
+        else 
+        {
+            player_animator.SetBool("run", true);
+            player_animator.SetFloat("speed", 0.0f);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -173,6 +202,9 @@ public class Player : MonoBehaviour
         else if (other.tag == "trashCan")
         {
             increase_time();
+        }
+        else if (other.tag == "Enemy") {
+            kill_player();
         }
 
 
