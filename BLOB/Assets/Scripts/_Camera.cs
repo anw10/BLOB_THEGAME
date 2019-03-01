@@ -7,10 +7,10 @@ public class _Camera : MonoBehaviour
     public Transform target;
 
     public float smoothS = 0.125f;
-    public Vector3 offset;
 
-     void LateUpdate()
+     void FixedUpdate()
     {
-        transform.position = target.position + offset;
+        transform.position = target.position;
+      
     }
 }
