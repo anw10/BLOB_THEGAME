@@ -8,9 +8,11 @@ public class _Camera : MonoBehaviour
 
     public float smoothS = 0.125f;
 
-     void FixedUpdate()
+     void LateUpdate()
     {
-        transform.position = target.position;
-      
+        if (transform.position.y > -8.5)
+        {
+            transform.position = target.position + new Vector3(0,2,0);
+        }
     }
 }
