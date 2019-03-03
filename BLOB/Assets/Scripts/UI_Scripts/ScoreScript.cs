@@ -15,6 +15,7 @@ public class ScoreScript : MonoBehaviour
         scoreValue = 0;
         highscore = PlayerPrefs.GetInt("highscore");
 
+
         Debug.Log("IS this working " + highscore);
 
     }
