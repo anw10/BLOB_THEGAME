@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public bool has_magnet;
 
     private SceneSwitch _sceneswitch;
+    private UI_Manager _uimanager;
 
     [SerializeField]
     private float _vertical_velocity;
@@ -47,6 +48,8 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>(); //this is new
         _sceneswitch = GetComponent<SceneSwitch>();
         _audioSource = GetComponent<AudioSource>();
+
+        _uimanager = GameObject.Find("Canvas_Game").GetComponent<UI_Manager>();
 
         has_magnet = false;
 
@@ -113,7 +116,9 @@ public class Player : MonoBehaviour
     }
 
     public void kill_player() {
-        _sceneswitch.ToMain();
+        //_sceneswitch.ToMain();
+        Time.timeScale = 0;
+        _uimanager.EndGame();
     }
 
 

@@ -7,23 +7,33 @@ public class GameManager : MonoBehaviour
     public bool gameOver = true;
     private Player player;
 
-    private UI_Manager _uiManager;
-    
 
-    private void Start()
+    private UI_Manager _uiManagerMain;
+    private UI_Manager _uiManagerGame;
+
+
+    void Start()
     {
-        _uiManager = GameObject.Find("Canvas_Game").GetComponent<UI_Manager>();
+        _uiManagerMain = GameObject.Find("Canvas_MainMenu").GetComponent<UI_Manager>();
+        _uiManagerGame = GameObject.Find("Canvas_Game").GetComponent<UI_Manager>();
 
-        if (_uiManager != null)
+        if (_uiManagerGame != null)
         {
-            _uiManager.UnPauseGame();
-            _uiManager.CloseSettings();
+            _uiManagerGame.UnPauseGame();
+            _uiManagerGame.StartGame();
+        }
+
+        if (_uiManagerMain != null)
+        {
+            _uiManagerMain.CloseSettings();
+            _uiManagerMain.CloseTutorial();
+            _uiManagerMain.CloseCredits();
         }
 
 
 
 
-        player = GameObject.Find("Player_Blob").GetComponent<Player>();
+        //player = GameObject.Find("Player_Blob").GetComponent<Player>();
 
  
     }
