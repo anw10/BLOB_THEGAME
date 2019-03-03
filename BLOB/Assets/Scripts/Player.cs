@@ -99,17 +99,12 @@ public class Player : MonoBehaviour
         Movement();
         play_animation();
 
-
-
-        if (transform.position.y < -8.97)
+        if (transform.position.y < -8.50)
         {
             kill_player();
         }
 
-        //_time--;
-        TimeScript.timeValue -= Time.deltaTime;//*Mathf.RoundToInt
-
-
+        TimeScript.timeValue -= Time.deltaTime;
     }
 
     public void kill_player() {
