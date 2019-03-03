@@ -5,18 +5,30 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    public static int scoreValue = 0;
+    public static int scoreValue;
+    public int highscore;
     Text score;
 
-    // Start is called before the first frame update
     void Start()
     {
         score = GetComponent<Text>();
+        scoreValue = 0;
+        highscore = PlayerPrefs.GetInt("highscore");
+
+
+        Debug.Log("IS this working " + highscore);
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         score.text = "Score: " + scoreValue;
+        if(scoreValue > highscore)
+        {
+            PlayerPrefs.SetInt("highscore", scoreValue);
+        }
+
+
     }
+
 }
