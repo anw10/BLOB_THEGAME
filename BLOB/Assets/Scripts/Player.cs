@@ -190,7 +190,6 @@ public class Player : MonoBehaviour
         if (other.tag == "ground")
         {
             _onGround = true;
-            player_animator.SetBool("IsJumping", false);
             doubleJump = true;
         }
         else if (other.tag == "Jump_PowerUp"){

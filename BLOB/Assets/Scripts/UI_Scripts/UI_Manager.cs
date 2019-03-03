@@ -14,6 +14,13 @@ public class UI_Manager : MonoBehaviour
     public GameObject End_Screen;
 
 
+
+
+    [SerializeField]
+    private AudioClip _clip;
+
+
+
     public void PauseGame()
     {
         Pause_Menu.SetActive(true);
@@ -39,6 +46,10 @@ public class UI_Manager : MonoBehaviour
         End_Screen.SetActive(false);
     }
 
+    public void playClick()
+    {
+        AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position);
+    }
 
     public void OpenMain()
     {
