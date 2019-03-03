@@ -11,14 +11,7 @@ public class UI_Manager : MonoBehaviour
 
     public GameObject Main_Canvas;
     public GameObject Pause_Menu;
-
-    private void Start()
-    {
-        Background.SetActive(true);
-        Settings_Menu.SetActive(false);
-        Credits_Menu.SetActive(false);
-        Tutorial_Menu.SetActive(false);
-    }
+    public GameObject End_Screen;
 
 
     public void PauseGame()
@@ -35,6 +28,17 @@ public class UI_Manager : MonoBehaviour
         Main_Canvas.SetActive(true);
     }
 
+    public void EndGame()
+    {
+        End_Screen.SetActive(true);
+        Main_Canvas.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        End_Screen.SetActive(false);
+    }
+
 
     public void OpenMain()
     {
@@ -49,45 +53,34 @@ public class UI_Manager : MonoBehaviour
     public void OpenSettings()
     {
         Settings_Menu.SetActive(true);
-        //Background.SetActive(false);
-        //Credits_Menu.SetActive(false);
-        //Tutorial_Menu.SetActive(false);
     }
 
     public void CloseSettings()
     {
         Settings_Menu.SetActive(false);
-        //Background.SetActive(true);
     }
 
 
     public void OpenCredits()
     {
         Credits_Menu.SetActive(true);
-        //Tutorial_Menu.SetActive(false);
-        //Settings_Menu.SetActive(false);
-        //Background.SetActive(false);
     }
 
     public void CloseCredits()
     {
         Credits_Menu.SetActive(false);
-        //Background.SetActive(true);
     }
 
 
     public void OpenTutorial()
     {
         Tutorial_Menu.SetActive(true);
-        //Background.SetActive(false);
-        //Credits_Menu.SetActive(false);
-        //Settings_Menu.SetActive(false);
+
     }
 
     public void CloseTutorial()
     {
         Tutorial_Menu.SetActive(false);
-        //Background.SetActive(true);
     }
 
 
