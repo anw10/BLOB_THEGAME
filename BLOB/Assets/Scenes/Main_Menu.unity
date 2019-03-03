@@ -193,7 +193,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89201377}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 520503ac229664db096126075c641160, type: 3}
@@ -282,6 +282,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &937887741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7224319472082547230, guid: c94cb35451de84b409c21ea56602e5cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1131954822}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &937887744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937887741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda06f195b25d5c4999d137ccfa54dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1100886663
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +433,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7224319472082547231, guid: c94cb35451de84b409c21ea56602e5cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7224319472082547231, guid: c94cb35451de84b409c21ea56602e5cc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c94cb35451de84b409c21ea56602e5cc, type: 3}
 --- !u!1001 &1452004012
 PrefabInstance:
@@ -587,30 +611,6 @@ PrefabInstance:
     - target: {fileID: 1107824909, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107824909, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
-      propertyPath: m_text
-      value: 'Tap to Jump
-
-        Collect Coins          for Points
-
-        Collect Trash          for more Time
-
-        Grab Power-Ups
-
-        Avoid Enemies'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107824909, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 111
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107824909, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 1107824909, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}

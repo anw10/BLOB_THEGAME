@@ -3,7 +3,15 @@ guid: 525ca3c492f05644cb4b3bbfccd5ad05
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Background: {instanceID: 0}
+  - Settings_Menu: {instanceID: 0}
+  - Credits_Menu: {instanceID: 0}
+  - Tutorial_Menu: {instanceID: 0}
+  - Main_Canvas: {instanceID: 0}
+  - Pause_Menu: {instanceID: 0}
+  - End_Screen: {instanceID: 0}
+  - _Clip: {fileID: 8300000, guid: 7b93cc8a4d76f4271bd5d52cdeff3871, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
