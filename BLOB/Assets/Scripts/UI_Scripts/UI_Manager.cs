@@ -12,6 +12,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject Main_Canvas;
     public GameObject Pause_Menu;
     public GameObject End_Screen;
+    public GameObject Win_Screen;
 
 
 
@@ -35,15 +36,22 @@ public class UI_Manager : MonoBehaviour
         Main_Canvas.SetActive(true);
     }
 
+    public void StartGame()
+    {
+        End_Screen.SetActive(false);
+        Win_Screen.SetActive(false);
+    }
+
     public void EndGame()
     {
         End_Screen.SetActive(true);
         Main_Canvas.SetActive(false);
     }
 
-    public void StartGame()
+    public void WinGame()
     {
-        End_Screen.SetActive(false);
+        Win_Screen.SetActive(true);
+        Main_Canvas.SetActive(false);
     }
 
     public void playClick()

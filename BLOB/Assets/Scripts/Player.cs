@@ -77,13 +77,23 @@ public class Player : MonoBehaviour
             kill_player();
         }
 
+        if (transform.position.x > 650)
+        {
+            win_game();
+        }
+
         TimeScript.timeValue -= Time.deltaTime;
     }
 
     public void kill_player() {
-        //_sceneswitch.ToMain();
         Time.timeScale = 0;
         _uimanager.EndGame();
+    }
+
+    public void win_game()
+    {
+        Time.timeScale = 0;
+        _uimanager.WinGame();
     }
 
 
