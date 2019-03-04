@@ -40,6 +40,4 @@ public class Enemy : MonoBehaviour
         transform.Translate(Vector3.left * Time.deltaTime * _speed);
     }
 
-
-
 }
