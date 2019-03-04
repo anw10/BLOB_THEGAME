@@ -32,6 +32,27 @@ public class SpawnManager : MonoBehaviour
 
 
 
+        //Instantiate(_EnemyObject, new Vector3(18.44f, -0.99f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(35.94f, -3.94f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(114.04f, -2.81f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(146.04f, 1.34f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(162.04f, 5.11f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(197f, 0.05f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(195f, 0.05f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(215f, 3.12f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(248f, 2.91f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(269f, 7.18f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(315f, 7.18f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(380f, 2.8f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(385f, 2.8f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(507f, 2.8f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(495f, 2.8f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(564f, 13f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(576f, 6.1f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(605f, 5f, 0), Quaternion.identity);
+        Instantiate(_EnemyObject, new Vector3(647f, 1.4f, 0), Quaternion.identity);
+
+
 
 
 
