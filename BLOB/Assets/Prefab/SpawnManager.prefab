@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _CoinObject: {fileID: 4535676343660814269, guid: 7a5b45b09ee6248a191f8976e56bf3d8,
     type: 3}
-  _TrashObject: {fileID: 3517631349133923702, guid: 1d55964923ee94c5f8bf3de5e8662152,
+  _trashObject: {fileID: 3517631349133923702, guid: 1d55964923ee94c5f8bf3de5e8662152,
     type: 3}
   _EnemyObject: {fileID: 4399143630326997851, guid: 116b79a6f4d3d48209905c6e89fe1b91,
     type: 3}
