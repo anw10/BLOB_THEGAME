@@ -8,27 +8,26 @@ public class ScoreScript : MonoBehaviour
     public static int scoreValue;
     public int highscore;
     Text score;
+    
 
     void Start()
     {
         score = GetComponent<Text>();
         scoreValue = 0;
+
         highscore = PlayerPrefs.GetInt("highscore");
-
-        //Made changes for Git
-        Debug.Log("IS this working " + highscore);
-
     }
 
     void Update()
     {
         score.text = "Score: " + scoreValue;
-        if(scoreValue > highscore)
+
+        //highText.text = "High Score: " + highscore;
+
+        if (scoreValue > highscore)
         {
             PlayerPrefs.SetInt("highscore", scoreValue);
         }
-
-
     }
 
 }
