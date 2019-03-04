@@ -193,7 +193,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89201377}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 520503ac229664db096126075c641160, type: 3}
@@ -611,6 +611,31 @@ PrefabInstance:
     - target: {fileID: 1107824909, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814646973754643253, guid: dcab09560c4ffc3468a6bb616096a7dc,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6814646973754643253, guid: dcab09560c4ffc3468a6bb616096a7dc,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569562591335633159, guid: dcab09560c4ffc3468a6bb616096a7dc,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569562591335633159, guid: dcab09560c4ffc3468a6bb616096a7dc,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569562591335633159, guid: dcab09560c4ffc3468a6bb616096a7dc,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcab09560c4ffc3468a6bb616096a7dc, type: 3}
