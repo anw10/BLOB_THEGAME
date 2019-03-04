@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     {
         _speed = 5.0f;
         player = GameObject.Find("Player_Blob").GetComponent<Player>();
+        float x_position = this.transform.position.x;
 
     }
     void Update()
@@ -37,9 +38,11 @@ public class Enemy : MonoBehaviour
 
     private void  movement()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * _speed);
+        float distance = Vector3.Distance(transform.localPosition, player.transform.localPosition);
+        if (distance < 20.0f)
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * _speed);
+        }
     }
-
-
 
 }
