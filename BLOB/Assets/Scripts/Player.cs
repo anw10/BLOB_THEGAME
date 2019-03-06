@@ -101,40 +101,50 @@ public class Player : MonoBehaviour
     /// Movement Method controls the movement of Player_Blob. 
     /// Using RigidBody2D to enable our player to jump.  
     /// </summary> 
+
+
+    public float jumpRate = 0.25f;
+        public float canJump = 0.0f;
+
     private void Movement()
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
-
-        //Input.touchCount > 0
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Input.touchCount > 0 || 
+        if (Input.touchCount > 0)
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Touch touch = Input.GetTouch(0);
-            if (jump_power_up == true)
+            if (Time.time > canJump)
             {
-                if (_onGround == true)
-                {
+                Touch touch = Input.GetTouch(0);
 
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-                    _audioSource.Play();
-                    _onGround = false;
-                }
-                else if (doubleJump == true)
+                if (jump_power_up == true)
                 {
-                   
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
-                    _audioSource.Play();
-                    doubleJump = false;
-                }
-            }
-            else {
-                if (_onGround == true)
-                {
+                    if (_onGround == true)
+                    {
 
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-                    _audioSource.Play();
-                    _onGround = false;
+                        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                        _audioSource.Play();
+                        _onGround = false;
+                    }
+                    else if (doubleJump == true)
+                    {
+                        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
+                        _audioSource.Play();
+                        doubleJump = false;
+                    }
                 }
+                else
+                {
+                    if (_onGround == true)
+                    {
+
+                        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                        _audioSource.Play();
+                        _onGround = false;
+                    }
+                }
+
+                canJump = Time.time + jumpRate;
             }
         }
     }
