@@ -53,43 +53,13 @@ public class Player : MonoBehaviour
 
         has_magnet = false;
 
-        TimeScript.timeValue = 45.0f;
+        TimeScript.timeValue = 60.0f;
 
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
-        Instantiate(_CoinObject, new Vector3(-5.9f, -0.51f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(-1.3f, -2.549f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(5.6f, -0.3f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(15.27f, 2.6f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(13.92f, 2.6f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(16.79f, 2.6f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(18.31f, 2.6f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(29.25f, -0.38f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(35.8f, -0.38f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(52.59f, 2.9f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(65.23f, 0.96f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(66.62f, 0.96f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(76.22f, -1.38f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(110.74f, 4.71f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(109.27f, 4.7f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(138.51f, 0.78f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(137.17f, 0.85f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(156.23f, 8.62f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(167.65f, 7.63f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(171.8f, 6.58f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(175.66f, 5.41f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(178.94f, 4.59f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(211.23f, 6.81f-1f, 0), Quaternion.identity);
-        Instantiate(_CoinObject, new Vector3(212.87f, 6.81f-1f, 0), Quaternion.identity);
 
 
 
-        Instantiate(_trashObject, new Vector3(32.35f, -0.38f-2f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(48.96f, 2.9f-1f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(70.72f, 0.9f-2f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(109.62f, 0.55f-2f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(137.87f, 4.47f, 0), Quaternion.identity);
-        Instantiate(_trashObject, new Vector3(139.68f, 4.47f, 0), Quaternion.identity);
 
         Instantiate(_Jump_PowerUp_Object, new Vector3(80.903f, -1.6314f, 0), Quaternion.identity);
     }
@@ -131,40 +101,50 @@ public class Player : MonoBehaviour
     /// Movement Method controls the movement of Player_Blob. 
     /// Using RigidBody2D to enable our player to jump.  
     /// </summary> 
+
+
+    public float jumpRate = 0.25f;
+        public float canJump = 0.0f;
+
     private void Movement()
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
-
-        //Input.touchCount > 0
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Input.touchCount > 0 || 
+        if (Input.touchCount > 0)
+        //if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Touch touch = Input.GetTouch(0);
-            if (jump_power_up == true)
+            if (Time.time > canJump)
             {
-                if (_onGround == true)
-                {
+                Touch touch = Input.GetTouch(0);
 
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-                    _audioSource.Play();
-                    _onGround = false;
-                }
-                else if (doubleJump == true)
+                if (jump_power_up == true)
                 {
-                   
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
-                    _audioSource.Play();
-                    doubleJump = false;
-                }
-            }
-            else {
-                if (_onGround == true)
-                {
+                    if (_onGround == true)
+                    {
 
-                    GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
-                    _audioSource.Play();
-                    _onGround = false;
+                        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                        _audioSource.Play();
+                        _onGround = false;
+                    }
+                    else if (doubleJump == true)
+                    {
+                        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 9, 0), ForceMode2D.Impulse);
+                        _audioSource.Play();
+                        doubleJump = false;
+                    }
                 }
+                else
+                {
+                    if (_onGround == true)
+                    {
+
+                        GetComponent<Rigidbody2D>().AddForce(new Vector3(0, _jumpPower, 0), ForceMode2D.Impulse);
+                        _audioSource.Play();
+                        _onGround = false;
+                    }
+                }
+
+                canJump = Time.time + jumpRate;
             }
         }
     }
