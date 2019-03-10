@@ -190,18 +190,25 @@ public class Player : MonoBehaviour
             ScoreScript.scoreValue += 10;
             //Debug.Log("Score: " + _score);
         }
-        else if (other.tag == "magnet") {
-            has_magnet = true;
-        }
         else if (other.tag == "trashCan")
         {
             increase_time();
+        }
+        else if (other.tag == "magnet")
+        {
+            StartCoroutine(MagnetPowerDownRoutine());
         }
         else if (other.tag == "Enemy") {
             kill_player();
         }
 
 
+    }
+
+    public IEnumerator MagnetPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(8.0f);
+        has_magnet = false;
     }
 
     public void increase_time() {
