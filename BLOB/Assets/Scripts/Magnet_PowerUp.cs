@@ -32,8 +32,6 @@ public class Magnet_PowerUp : MonoBehaviour
                 player.has_magnet = true;
             }
 
-           //StartCoroutine(player.MagnetPowerDownRoutine());
-
             Destroy(this.gameObject);
         }
     }

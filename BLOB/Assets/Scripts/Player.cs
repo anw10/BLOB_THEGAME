@@ -185,11 +185,11 @@ public class Player : MonoBehaviour
         else if (other.tag == "Jump_PowerUp"){
             jump_power_up = true;
         }
-        else if (other.tag == "coin") {
+        //else if (other.tag == "coin") {
             //_score = _score + 10;
-            ScoreScript.scoreValue += 10;
+           
             //Debug.Log("Score: " + _score);
-        }
+        //}
         else if (other.tag == "trashCan")
         {
             increase_time();
