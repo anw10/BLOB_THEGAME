@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
         has_magnet = false;
 
-        TimeScript.timeValue = 60.0f;
+        TimeScript.timeValue = 80.0f;
 
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
