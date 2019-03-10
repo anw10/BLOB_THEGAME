@@ -112,6 +112,8 @@ MonoBehaviour:
   has_magnet: 0
   _vertical_velocity: 0
   player_animator: {fileID: 769424689772727255}
+  jumpRate: 0.25
+  canJump: 0
 --- !u!58 &769424689772727256
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,7 +207,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 769424689772727252}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: df92e43eecc9ddd449c7d260872e4887, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

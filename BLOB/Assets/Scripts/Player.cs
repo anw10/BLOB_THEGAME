@@ -72,6 +72,9 @@ public class Player : MonoBehaviour
         Movement();
         play_animation();
 
+        float velocity = transform.position.x;
+        Debug.Log("Vertical " + velocity   );
+
         if (transform.position.y < -8.50)
         {
             kill_player();
@@ -109,13 +112,13 @@ public class Player : MonoBehaviour
     private void Movement()
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
-        //Input.touchCount > 0 || 
-        if (Input.touchCount > 0)
-        //if (Input.GetKeyDown(KeyCode.Space))
+        //Input.touchCount > 0 
+        //if (Input.touchCount > 0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (Time.time > canJump)
             {
-                Touch touch = Input.GetTouch(0);
+                //Touch touch = Input.GetTouch(0);
 
                 if (jump_power_up == true)
                 {
