@@ -30,9 +30,15 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
+
         if (other.tag == "Player")
         {
-            AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position);
+            if (player != null)
+            {
+                ScoreScript.scoreValue += 10;
+                AudioSource.PlayClipAtPoint(_clip, Camera.main.transform.position);
+
+            }
             Destroy(this.gameObject);
         }
     }
