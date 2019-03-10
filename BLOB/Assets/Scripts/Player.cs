@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
         has_magnet = false;
 
-        TimeScript.timeValue = 60.0f;
+        TimeScript.timeValue = 80.0f;
 
 
         transform.position = new Vector3(-8.806f, -0.652f, 0);
@@ -185,23 +185,30 @@ public class Player : MonoBehaviour
         else if (other.tag == "Jump_PowerUp"){
             jump_power_up = true;
         }
-        else if (other.tag == "coin") {
+        //else if (other.tag == "coin") {
             //_score = _score + 10;
-            ScoreScript.scoreValue += 10;
+           
             //Debug.Log("Score: " + _score);
-        }
-        else if (other.tag == "magnet") {
-            has_magnet = true;
-        }
+        //}
         else if (other.tag == "trashCan")
         {
             increase_time();
+        }
+        else if (other.tag == "magnet")
+        {
+            StartCoroutine(MagnetPowerDownRoutine());
         }
         else if (other.tag == "Enemy") {
             kill_player();
         }
 
 
+    }
+
+    public IEnumerator MagnetPowerDownRoutine()
+    {
+        yield return new WaitForSeconds(8.0f);
+        has_magnet = false;
     }
 
     public void increase_time() {

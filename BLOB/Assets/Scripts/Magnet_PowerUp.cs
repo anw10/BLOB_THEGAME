@@ -21,9 +21,16 @@ public class Magnet_PowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Player player = other.GetComponent<Player>();
 
         if (other.tag == "Player")
         {
+
+
+            if (player != null)
+            {
+                player.has_magnet = true;
+            }
 
             Destroy(this.gameObject);
         }
