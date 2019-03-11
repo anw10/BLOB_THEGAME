@@ -9,11 +9,14 @@ public class ScoreScript : MonoBehaviour
     public int highscore;
     Text score;
 
+   //private HighScoreScript high_score_script;
+
     void Start()
     {
+        //high_score_script = GetComponents<HighScoreScript>();
         score = GetComponent<Text>();
         scoreValue = 0;
-
+        //highscore = 0;
         highscore = PlayerPrefs.GetInt("highscore");
     }
 
@@ -25,9 +28,8 @@ public class ScoreScript : MonoBehaviour
 
         if (scoreValue > highscore)
         {
-            PlayerPrefs.SetInt("highscore", scoreValue);
-            //newhighscore.text = "New High Score!";
 
+            PlayerPrefs.SetInt("highscore", scoreValue);
         }
     }
 

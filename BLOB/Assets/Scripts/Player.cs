@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    public float _speed = 4.0f;
+    public float _speed = 5.0f;
 
     [SerializeField]
     private float _jumpPower = 13.0f;
@@ -113,12 +113,11 @@ public class Player : MonoBehaviour
     {
         transform.Translate(Vector3.right * Time.deltaTime * _speed);
         //Input.touchCount > 0 
-        //if (Input.touchCount > 0)
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.touchCount > 0)
         {
             if (Time.time > canJump)
             {
-                //Touch touch = Input.GetTouch(0);
+                Touch touch = Input.GetTouch(0);
 
                 if (jump_power_up == true)
                 {
