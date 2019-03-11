@@ -14,8 +14,8 @@ public class ScoreScript : MonoBehaviour
     {
         score = GetComponent<Text>();
         scoreValue = 0;
-
-        highscore = PlayerPrefs.GetInt("highscore");
+        highscore = 0;
+        //highscore = PlayerPrefs.GetInt("highscore");
     }
 
     void Update()
