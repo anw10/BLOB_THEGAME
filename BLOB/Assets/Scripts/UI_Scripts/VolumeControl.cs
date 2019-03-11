@@ -6,17 +6,25 @@ using UnityEngine.UI;
 public class VolumeControl : MonoBehaviour
 {
     public Slider slider;
-    float setVolume = 1.0f;
 
     void Start()
     {
-        slider.value = setVolume;
+        if (PlayerPrefs.HasKey("volume"))
+        {
+            slider.value = PlayerPrefs.GetFloat("volume");
+            AudioListener.volume = PlayerPrefs.GetFloat("volume");
+        }
+        else
+        {
+            slider.value = 1.0f;
+            AudioListener.volume = 1.0f;
+        }
+
     }
-    void Update ()
+    void Update()
     {
-        AudioListener.volume = setVolume;
-        setVolume = slider.value;
-        //made changes for git
+        PlayerPrefs.SetFloat("volume", slider.value);
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
     }
-    
+
 }
