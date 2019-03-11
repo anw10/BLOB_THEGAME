@@ -332,6 +332,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1003207168, guid: dfb93bfd14273db449723fd527045048, type: 3}
+      propertyPath: m_CellLayout
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058002705, guid: dfb93bfd14273db449723fd527045048, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1058002708, guid: dfb93bfd14273db449723fd527045048, type: 3}
+      propertyPath: m_DetectChunkCullingBounds
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1058002707, guid: dfb93bfd14273db449723fd527045048, type: 3}
       propertyPath: m_UsedByEffector
       value: 0
@@ -343,18 +355,6 @@ PrefabInstance:
     - target: {fileID: 1058002707, guid: dfb93bfd14273db449723fd527045048, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1058002705, guid: dfb93bfd14273db449723fd527045048, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1003207168, guid: dfb93bfd14273db449723fd527045048, type: 3}
-      propertyPath: m_CellLayout
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1058002708, guid: dfb93bfd14273db449723fd527045048, type: 3}
-      propertyPath: m_DetectChunkCullingBounds
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 221210551, guid: dfb93bfd14273db449723fd527045048, type: 3}
       propertyPath: m_UseSideFriction
@@ -523,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 769424689772727259, guid: 4aeffcbecf6ad4156a9c0ed90dc69064,
         type: 3}
       propertyPath: _speed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 769424689772727259, guid: 4aeffcbecf6ad4156a9c0ed90dc69064,
         type: 3}
